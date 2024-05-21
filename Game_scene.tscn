@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://df8qfkbfr8o3i"]
+
+[ext_resource type="PackedScene" uid="uid://d204dj8wl3nrk" path="res://turtle.tscn" id="1_4h16j"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="2_ouqmk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Turtle" parent="." instance=ExtResource("1_4h16j")]
+position = Vector2(594, 320)
+
+[node name="Camera2D" type="Camera2D" parent="Turtle"]
+top_level = true
+position_smoothing_speed = 20.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+script = ExtResource("2_ouqmk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+skew = -0.380482
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+position = Vector2(-884.613, -501.892)
+polygon = PackedVector2Array(1063.02, 710.835, 1205.22, 917.623, 1390.43, 1178.26, 1957.23, 1267.66, 3267.23, 1316.12, 4572.63, 1131.95, 5803.02, 662.369, 4616.25, 1903.1, 100.043, 1626.3)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(176.806, 213.25, 501.618, 679.601, 1079.22, 766.84, 2364.22, 809.921, 3694.62, 631.135, 4926.2, 152.937, 3757.64, 1385.05, -815.571, 1119.03)

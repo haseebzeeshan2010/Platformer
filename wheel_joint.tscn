@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://hnwtj2473gnx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjjum"]
+radius = 9.05539
+
+[node name="WheelJoint" type="PinJoint2D"]
+node_b = NodePath("StaticBody2D")
+
+[node name="StaticBody2D" type="RigidBody2D" parent="."]
+unique_name_in_owner = true
+linear_damp = 3.061
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_mjjum")
