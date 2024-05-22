@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://d204dj8wl3nrk"]
+[gd_scene load_steps=62 format=3 uid="uid://d204dj8wl3nrk"]
 
 [ext_resource type="Texture2D" uid="uid://bcfwbwhn2y7qb" path="res://Turtle_sprite/turtle1.svg" id="1_73ty2"]
 [ext_resource type="Script" path="res://turtle.gd" id="1_iyamu"]
@@ -236,13 +236,16 @@ animations = [{
 "speed": 60.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lmvd"]
+size = Vector2(137.984, 20)
+
 [node name="Turtle" type="RigidBody2D"]
 position = Vector2(5, 0)
 rotation = -0.00643772
-mass = 6.56
 script = ExtResource("1_iyamu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_etu38")
 frame_progress = 0.689485
@@ -257,9 +260,18 @@ scale = Vector2(1.48003, 0.87499)
 polygon = PackedVector2Array(-41.9902, 25.8293, -44.7885, 50.9425, -42.1033, 55.5433, -19.8069, 55.7861, -21.1321, 48.9143, -21.0886, 37.4859, 12.6851, 40.1394, 9.93028, 53.8242, 9.22854, 60.6739, 35.5875, 58.6751, 35.6136, 51.818, 33.0024, 27.7888, 14.0407, 39.0113)
 
 [node name="WheelJoint" parent="." instance=ExtResource("59_d5cw4")]
+unique_name_in_owner = true
 position = Vector2(-56.3851, 59.6382)
 node_a = NodePath("..")
 
 [node name="WheelJoint2" parent="." instance=ExtResource("59_d5cw4")]
+unique_name_in_owner = true
 position = Vector2(42.6128, 60.2756)
 node_a = NodePath("..")
+
+[node name="GroundCheck" type="Area2D" parent="."]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck"]
+position = Vector2(-8.338, 64.11)
+shape = SubResource("RectangleShape2D_1lmvd")
