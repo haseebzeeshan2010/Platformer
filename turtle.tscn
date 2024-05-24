@@ -237,7 +237,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1lmvd"]
-size = Vector2(137.984, 20)
+size = Vector2(121.017, 16.8756)
 
 [node name="Turtle" type="RigidBody2D"]
 position = Vector2(5, 0)
@@ -273,5 +273,6 @@ node_a = NodePath("..")
 unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCheck"]
-position = Vector2(-8.338, 64.11)
+position = Vector2(-6.92155, 62.5479)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1lmvd")

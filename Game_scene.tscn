@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://df8qfkbfr8o3i"]
+[gd_scene load_steps=6 format=3 uid="uid://df8qfkbfr8o3i"]
 
 [ext_resource type="PackedScene" uid="uid://d204dj8wl3nrk" path="res://turtle.tscn" id="1_4h16j"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="2_ouqmk"]
+[ext_resource type="Texture2D" uid="uid://dsplbokarda2r" path="res://Grass/costume2 (1).svg" id="4_l7vgv"]
+[ext_resource type="Texture2D" uid="uid://1p4k6k0v2se2" path="res://Grass/costume1.svg" id="4_v8gc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyodc"]
+size = Vector2(1946, 249)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -1896.0
+offset_top = -855.0
+offset_right = 2078.0
+offset_bottom = 1037.0
+color = Color(5.77569e-07, 0.80103, 0.895632, 1)
 
 [node name="Turtle" parent="." instance=ExtResource("1_4h16j")]
 position = Vector2(594, 320)
@@ -12,34 +27,102 @@ center_of_mass = Vector2(0, 67.3)
 
 [node name="Camera2D" type="Camera2D" parent="Turtle"]
 top_level = true
+offset = Vector2(0, -150)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_speed = 20.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-drag_left_margin = 0.05
-drag_top_margin = 0.05
-drag_right_margin = 0.05
-drag_bottom_margin = 0.05
+drag_left_margin = 0.0
+drag_top_margin = 0.41
+drag_right_margin = 0.0
+drag_bottom_margin = 0.32
 script = ExtResource("2_ouqmk")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-skew = -0.380482
+[node name="Ground" type="StaticBody2D" parent="."]
 
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
-position = Vector2(-884.613, -501.892)
-color = Color(0.136089, 0.764791, 0, 1)
-polygon = PackedVector2Array(1238.22, 939.163, 1263.03, 969.32, 1291.03, 980.09, 1355.83, 977.936, 2626.63, 975.782, 3358.23, 1229.96, 3629.04, 1507.83, 3821.05, 1970.95, 3837.45, 2007.57, 3873.05, 2067.88, 3911.45, 2093.73, 3949.06, 2110.96, 3990.66, 2106.66, 4037.45, 2093.73, 4142.65, 2042.03, 4287.05, 1960.18, 4433.05, 1927.87, 4540.25, 1930.02, 4592.25, 1983.87, 4662.65, 2063.57, 4802.25, 1973.1, 4982.25, 1973.1, 5006.25, 2005.42, 5033.05, 2057.11, 5014.25, 2102.35, 4984.26, 2253.13, 5041.46, 2373.76, 5171.06, 2380.22, 5305.06, 2337.14, 5515.86, 2248.82, 5873.85, 2076.5, 5972.1, 3704.96, 983.649, 1875.1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(3907, 592.5)
+scale = Vector2(4, 1)
+shape = SubResource("RectangleShape2D_kyodc")
+
+[node name="Scene_Objects" type="Node2D" parent="."]
+
+[node name="Costume2(1)" type="Sprite2D" parent="Scene_Objects"]
+z_index = -9
+position = Vector2(3807, 602)
+scale = Vector2(7.57692, 1.33333)
+texture = ExtResource("4_l7vgv")
+
+[node name="Costume1" type="Sprite2D" parent="Scene_Objects"]
+position = Vector2(696.5, 460.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume2" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(655.5, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume3" type="Sprite2D" parent="Scene_Objects"]
+position = Vector2(981.5, 460.5)
+scale = Vector2(0.773913, 1)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume4" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(979.5, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume6" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(1311.18, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume8" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(1311.18, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume9" type="Sprite2D" parent="Scene_Objects"]
+position = Vector2(1626.5, 460.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume12" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(1909.5, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume14" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(2241.18, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume16" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(2241.18, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume10" type="Sprite2D" parent="Scene_Objects"]
+z_index = -2
+position = Vector2(1473, 423.5)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume7" type="Sprite2D" parent="Scene_Objects"]
+z_index = -4
+position = Vector2(670.5, 364.5)
+scale = Vector2(1, 0.76699)
+texture = ExtResource("4_v8gc6")
+
+[node name="Costume11" type="Sprite2D" parent="Scene_Objects"]
+z_index = -4
+position = Vector2(1498, 365)
+scale = Vector2(1, 0.757282)
+texture = ExtResource("4_v8gc6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(3500, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(353.612, 437.271, 366.612, 453.426, 374.812, 466.351, 391.012, 473.89, 411.613, 480.352, 453.613, 480.352, 1748.21, 476.044, 2476.22, 729.144, 2745.63, 1018.86, 2984.64, 1557.37, 3012.24, 1585.38, 3045.84, 1591.84, 3076.64, 1600.46, 3113.44, 1598.3, 3151.44, 1587.53, 3214.84, 1559.53, 3403.24, 1461.52, 3555.64, 1422.75, 3659.64, 1422.75, 3774.24, 1553.07, 3923.64, 1465.83, 4105.64, 1465.83, 4151.64, 1546.6, 4098.65, 1751.24, 4153.05, 1863.25, 4279.25, 1881.56, 4437.65, 1826.63, 4683.65, 1724.31, 4984.64, 1573.53, 5086.88, 3201.99, 98.2361, 1375.36)
+polygon = PackedVector2Array(2697, 469, 2771, 466, 2879, 449, 3073, 419, 3360, 330, 3408, 313, 3486, 272, 3680, 141, 3902, -121, 3960, -453, 3824, -801, 3595, -1000, 3353, -1028, 3113, -962, 2927, -849, 2828, -637, 2851, -418, 2997, -176, 3148, -32, 3010, -40, 2844, -300, 2665, -758, 2952, -1083, 3657, -1131, 4285, -766, 4212, 232, 4038, 449)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-skew = -0.380482
-
-[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2"]
-position = Vector2(-884.613, -501.892)
-color = Color(0.461957, 0.878503, 0.21857, 1)
-polygon = PackedVector2Array(5970.5, 3709.26, 5977.5, 3725.42, 5984.3, 3728.65, 6004.5, 3757.73, 6028.5, 3779.27, 6065.9, 3794.35, 6095.9, 3805.12, 6138.9, 3810.5, 6293.7, 3808.35, 6807.5, 3800.81, 7145.5, 3795.43, 7194.9, 3794.35, 7301.5, 3779.27, 7434.7, 3754.5, 7562.5, 3714.65, 7751.49, 3623.1, 8017.69, 3452.93, 8245.89, 3282.76, 8382.28, 3147.06, 8453.08, 3042.59, 8559.67, 2828.26, 8670.47, 2777.64, 8844.27, 2780.87, 8311.7, 3797.58, 5926.9, 3988.21)
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
-polygon = PackedVector2Array(5085.68, 3210.6, 5125.69, 3253.68, 5155.69, 3280.61, 5195.89, 3298.92, 5267.09, 3306.46, 6301.89, 3293.53, 6358.09, 3284.92, 6538.89, 3255.84, 6689.88, 3207.37, 6864.68, 3124.44, 7149.88, 2938.12, 7366.47, 2777.64, 7502.47, 2637.63, 7581.07, 2520.23, 7674.26, 2328.52, 7778.46, 2276.83, 7957.66, 2278.98, 7423.89, 3298.92, 5044.09, 3489.55)
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(2695, 479, 2887, 447, 3107, 415, 3415, 311, 3676, 149, 3902, -122, 3959, -464, 3823, -795, 3600, -997, 3350, -1028, 3115, -962, 2929, -855, 2829, -645, 2853, -415, 2989, -172, 3143, -34, 3008, -39, 2843, -296, 2667, -755, 2950, -1085, 3652, -1130, 4282, -764, 4216, 225, 4035, 454)

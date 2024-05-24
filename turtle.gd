@@ -15,12 +15,13 @@ func _process(delta):
 		
 		apply_central_impulse(Vector2(cos(angle), sin(angle)) * impulse_strength)
 		if Input.is_action_pressed("right_move"):
-			impulse_strength = 38
+			impulse_strength = 15
 			
 			
 			#apply_central_impulse(Vector2(10,0))
 		elif Input.is_action_pressed("left_move"):
-			impulse_strength = -38
+			impulse_strength = -15
+			
 
 		else:
 			impulse_strength = 0 
